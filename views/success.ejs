@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Welcome <%=name%></p>
+      <p></p>
+      <button type="button" name="button" onclick="logout()">Logout</button>
+      <button type="button" name="button" onclick="changep()">Change Password</button>
+    </div>
+    <script type="text/javascript">
+      function logout(){
+       location.replace("/logout");
+      }
+      function changep(){
+        location.replace("/forgotpassword");
+      }
+    </script>
+  </body>
+</html>
