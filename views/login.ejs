@@ -18,6 +18,28 @@
 	<link rel="stylesheet" type="text/css" href="/css.css">
 </head>
 <body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <div class="container">
 
 	<div class="d-flex justify-content-center h-100">
@@ -26,8 +48,8 @@
 				<h3>Sign In</h3>
         <p class="pol"><%=err%></p>
 				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><a href="/auth/facebook"><i class="fab fa-facebook-square">  </i> </a></span>
+					<span><a href="/auth/google"><i class="fab fa-google-plus-square"></i></a></span>
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
